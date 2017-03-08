@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'RobotoDraft', 'Helvetica', 'Arial', 'sans-serif';
+    background: rgb(237, 231, 246);
+}
+
+.header {
+    height: 184px;
+    background: rgb(103, 58, 183);
+}
+
+.title {
+    font: 500 20px 'Roboto', 'RobotoDraft', 'Helvetica', 'Arial', 'sans-serif';
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    color: #fff;
+}
+
+
+/*表单主体配置*/
+
+.content {
+    width: 1200px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+}
+
+.form-box {
+    width: 770px;
+    margin-top: -70px;
+    background: #fff;
+}
+
+.form-header {
+    height: 49px;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+}
+
+.form-content {
+    box-shadow: 0 2px 2px 0 rgba(26, 26, 26, .17);
+}
+
+.form-title {
+    font-size: 34px;
+    padding: 16px 42px;
+}
+
+.question-wrap {
+    padding: 16px 42px;
+}
+
+.question {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.question > span {
+    line-height: 135%;
+    display: block;
+    border-bottom: 1px solid rgb(213, 213, 213);
+}
+
+.option {
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.option > .radio,
+.option > .checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: -4px;
+}
+
+.select-box > .select {
+    width: 100px;
+    height: 25px;
+}
+
+.input-box > .input {
+    width: 400px;
+    height: 25px;
+    padding: 0 5px;
+}
+
+.textarea-box > .textarea {
+    font-size: 16px;
+    width: 100%;
+    height: 130px;
+    resize: none;
+}
+
+
+/*配置框样式*/
+
+.form-set-wrap {
+    position: relative;
+}
+
+.form-set {
+    position: absolute;
+    right: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 360px;
+    padding: 10px 15px;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+}
+
+.type-intro {
+    font-size: 18px;
+    position: absolute;
+    width: 60px;
+    text-align: right;
+    vertical-align: -2px;
+}
+
+.input-type-select {
+    line-height: 40px;
+}
+
+.set-box-margin {
+    margin: 10px 0;
+}
+
+
+/*设置配置项中每个小板块的间距*/
+
+.set-content {
+    margin-left: 70px;
+}
+
+.set-content > .select {
+    width: 100px;
+    height: 25px;
+    outline: none;
+}
+
+.input-style {
+    padding-left: 3px;
+    border: 1px solid rgb(227, 227, 227);
+    outline: none;
+}
+
+.input-style:focus {
+    border: 1px solid rgb(171, 171, 171);
+}
+
+.set-question {
+    width: 283px;
+    height: 25px;
+}
+
+.add-option {
+    width: 237px;
+    height: 25px;
+}
+
+.add-btn {
+    width: 46px;
+    height: 27px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: rgb(90, 120, 246);
+}
+
+.add-btn:active {
+    background: rgb(107, 142, 249);
+}
+
+.option-set {
+    font-size: 20px;
+    display: block;
+    margin: 8px 0;
+    padding: 5px 0;
+    background: rgb(245, 245, 245);
+}
+
+.option-wrap {
+    position: relative;
+}
+
+.delete-mask {
+    font-size: 20px;
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    background: rgb(235, 28, 28);
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+}
+
+.option-wrap:hover > .delete-mask {
+    opacity: .9;
+}
+
+.submit-btn {
+    font-size: 20px;
+    height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: rgb(103, 58, 183);
+}
+
+.submit-btn:active {
+    background: rgb(75, 35, 148);
+}

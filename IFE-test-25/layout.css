@@ -1,0 +1,152 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: "微软雅黑";
+    margin: 0;
+    height: 100%;
+    background: #dddddd;
+}
+header {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #393f4f;
+    padding-left: 10px;
+    animation: header_appear .5s;
+}
+@keyframes header_appear {
+    0% {
+        height: 0;
+    }
+    100% {
+        height:
+    }
+}
+.function-wrap {
+    position: absolute;
+    width: 180px;
+    min-height: 100%;
+}
+.side-bar {
+    padding: 0;
+    position: absolute;
+    width: 180px;
+}
+.bar-button {
+    position: relative;
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    border: none;
+    border-left: 4px solid transparent;
+    transition: .2s;
+    cursor: pointer;
+    list-style: none;
+}
+.bar-button:hover {
+    background: #f2f2f2;
+    border-left: 4px solid #747474;
+}
+.add-document-icon, .add-file-icon, .search-icon, .delete-icon {
+    width: 16px;
+    margin: 0 7px -3px 15px;
+}
+.tree-wrap {
+    position: relative;
+    margin-left: 180px;
+    padding: 10px 0 0 20px;
+    background: #ededed;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.tree {
+    margin-left: -36px;
+}
+.node-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 36px;
+}
+.root {
+    margin-left: 0;
+}
+.hidden {
+    display: none;
+}
+.node-header, .node {
+    margin: 4px 0;
+}
+.to-mark, .marked {
+    position: relative;
+    bottom: 1px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.to-mark {
+    background: #b3b3b3;
+    visibility: hidden;
+}
+.marked {
+    background-color: #c31700;
+}
+.node-header:hover> .to-mark, .node:hover> .to-mark {
+    visibility: visible;
+}
+.found {
+    color: #d40000;
+}
+.arrow, .document, .file {
+    width: 16px;
+}
+.document, .file {
+    margin: 0 0 -3px -3px;
+}
+.arrow {
+    margin-left: -3px;
+}
+.empty-arrow {
+    opacity: .4;
+}
+.arrow-down {
+    transform: rotate(90deg);
+}
+.arrow-down:hover {
+    animation: down-shock .3s;
+    cursor: pointer;
+}
+.arrow-right:hover {
+    animation: right-shock .3s;
+    cursor: pointer;
+}
+.add, .delete {}
+.add:hover, .delete:hover {}
+.add {}
+.delete {}
+@keyframes right-shock {
+    0% {}
+    33% {
+        transform: rotate(-10deg);
+    }
+    66% {
+        transform: rotate(10deg);
+    }
+    100% {}
+}
+@keyframes down-shock {
+    0% {}
+    33% {
+        transform: rotate(100deg);
+    }
+    66% {
+        transform: rotate(80deg);
+    }
+    100% {}
+}

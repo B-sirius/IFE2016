@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>辣鸡版问卷生成器</title>
+    <link rel="stylesheet" href="css/layout.css" media="screen" title="no title">
+</head>
+
+<body>
+    <header class="header">
+        <div class="title">辣鸡表单毁我人生</div>
+    </header>
+    <div class="content">
+        <div class="form-set-wrap">
+            <div class="form-set" id='form-set'>
+                <div class="input-type-select set-box-margin">
+                    <span class="type-intro">类型：</span>
+                    <div class="set-content">
+                        <select id='input-type-select' class="select" name="input-type">
+                            <option value="radio">单选题</option>
+                            <option value="checkbox">多选题</option>
+                            <option value="select">下拉菜单</option>
+                            <option value="text">简短回答</option>
+                            <option value="textarea">段落</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-type-wrap">
+                    <div id="radio-set-box">
+                        <div class="question-box set-box-margin">
+                            <span class="type-intro">问题：</span>
+                            <input class='set-question input-style set-content' type="text" name="name" value="">
+                        </div>
+                        <div class="options-box set-box-margin">
+                            <span class="type-intro">选项：</span>
+                            <div class="options-wrap set-content">
+                                <div>
+                                    <input class="add-option input-style" type="text" name="name" value="" placeholder="输入要添加的选项，回车键确定"><!--去掉Input和button的间距--><button class='add-btn' type="button" name="button">添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="checkbox-set-box">
+                        <div class="question-box set-box-margin">
+                            <span class="type-intro">问题：</span>
+                            <input class='set-question input-style set-content' type="text" name="name" value="">
+                        </div>
+                        <div class="options-box set-box-margin">
+                            <span class="type-intro">选项：</span>
+                            <div class="options-wrap set-content">
+                                <div>
+                                    <input class="add-option input-style" type="text" name="name" value="" placeholder="输入要添加的选项，回车键确定"><!--去掉Input和button的间距--><button class='add-btn' type="button" name="button">添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="select-set-box">
+                        <div class="question-box set-box-margin">
+                            <span class="type-intro">问题：</span>
+                            <input class='set-question input-style set-content' type="text" name="name" value="">
+                        </div>
+                        <div class="options-box set-box-margin">
+                            <span class="type-intro">选项：</span>
+                            <div class="options-wrap set-content">
+                                <div>
+                                    <input class="add-option input-style" type="text" name="name" value="" placeholder="输入要添加的选项，回车键确定"><!--去掉Input和button的间距--><button class='add-btn' type="button" name="button">添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-set-box">
+                        <div class="question-box set-box-margin">
+                            <span class="type-intro">问题：</span>
+                            <input class='set-question input-style set-content' type="text" name="name" value="">
+                        </div>
+                    </div>
+                    <div id="textarea-set-box">
+                        <div class="question-box set-box-margin">
+                            <span class="type-intro">问题：</span>
+                            <input class='set-question input-style set-content' type="text" name="name" value="">
+                        </div>
+                    </div>
+                </div>
+                <button class='submit-btn' id='submit-btn' type="button" name="button">添加问题</button>
+            </div>
+        </div>
+        <div id='form-box' class="form-box">
+            <div class="form-header">
+            </div>
+            <div class="form-content">
+                <div class="form-title">
+                    <span>年轻人的第一份表单生成问卷</span>
+                </div>
+                <form id='form' class="form" action="index.html" method="post">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+</script>
+
+</html>

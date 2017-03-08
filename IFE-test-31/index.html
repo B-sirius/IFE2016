@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单联动</title>
+        <style media="screen">
+            body {
+                font-size: 24px;
+                font-family: 'microsoft yahei';
+            }
+            .container {
+                position: absolute;
+                width: 600px;
+                height: 200px;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            .radio-wrap, .school-wrap, .company-wrap{
+                display: flex;
+                justify-content: space-around;
+                margin: 20px 0;
+            }
+            .radio {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-left: -26px;
+                margin-top: 7px;
+            }
+            .select {
+                width: 200px;
+                padding-left: 6px;
+                height: 40px;
+                font-size: 20px;
+                font-family: 'microsoft yahei';
+                border-radius: 5px;
+                border: 1px solid rgb(99, 99, 99);
+                outline: none;
+            }
+            .input {
+                width: 400px;
+                height: 40px;
+                padding-left: 6px;
+                border-radius: 5px;
+                border: 1px solid rgb(99, 99, 99);
+                outline: none;
+            }
+            .hide {
+                position: absolute;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form class="form" action="index.html" method="post">
+                <div class="radio-wrap" id='related-radio'>
+                    <div>
+                        <input class='radio switch-btn' type="radio" name="isStudent" value="student" checked>在校生
+                    </div>
+                    <div>
+                        <input class='radio switch-btn' type="radio" name="isStudent" value="notStudent">非在校生
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <div class="school-wrap" id='school-wrap'>
+                        学校
+                        <select class="select city" id='parent-select' name="city">
+                        </select>
+                        <select class="select city" id='children-select' name="college">
+                        </select>
+                    </div>
+                    <div class="company-wrap hide" id='company-wrap'>
+                        就业单位<input class='input' type="text" name="company" value="company">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src='js/script.js'></script>
+</html>

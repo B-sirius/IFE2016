@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单验证练习</title>
+        <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+    </head>
+    <body>
+        <div class="container">
+            <form class="form" id='register-form'>
+                <div class="input-wrap">
+                    <span class='input-tip'>名称：</span>
+                    <input class='input' type="text" name="userName" value="">
+                    <div class="warn-wrap">
+                        <div class="warn" id='warn'>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <span class='input-tip'>密码：</span>
+                    <input class='input' type="password" name="password" value="">
+                    <div class="warn">
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <span class='input-tip'>密码确认：</span>
+                    <input class='input' type="password" name="confirmPassword" value="">
+                    <div class="warn">
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <span class='input-tip'>邮箱：</span>
+                    <input class='input' type="text" name="email" value="">
+                    <div class="warn">
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <span class='input-tip'>手机：</span>
+                    <input class='input' type="text" name="phone" value="">
+                    <div class="warn">
+                    </div>
+                </div>
+                <input class='btn' id='register-btn' type="button" name="submitBtn" value="注册">
+			</form>
+        </div>
+    </body>
+    <script src='js/script.js'></script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>简直心机boy的指挥官和飞船的爱情故事</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <section class="console" id="console">
+    </section>
+    <section class="content" id="content">
+        <div class="dialog" id="dialog">
+            <div class="dialog-title" id="dialog-title">
+            </div>
+            <div class="dialog-content">
+                <table class="spaceship-information">
+                    <tr class='table-header'>
+                        <th>
+                            飞船
+                        </th>
+                        <th>
+                            动力系统
+                        </th>
+                        <th>
+                            能源系统
+                        </th>
+                        <th>
+                            当前状态
+                        </th>
+                        <th>
+                            剩余能耗
+                        </th>
+                    </tr>
+                    <tr class='table-content' id='no0'>
+                        <td>
+                            No.1
+                        </td>
+                        <td class='dynamic-manager'>
+                            ?
+                        </td>
+                        <td class="power-manager">
+                            ?
+                        </td>
+                        <td class="currstate">
+                            ?
+                        </td>
+                        <td class='power-left'>
+                            ?
+                        </td>
+                    </tr>
+                    <tr class='table-content' id='no1'>
+                        <td>
+                            No.2
+                        </td>
+                        <td class='dynamic-manager'>
+                            ?
+                        </td>
+                        <td class="power-manager">
+                            ?
+                        </td>
+                        <td class="currstate">
+                            ?
+                        </td>
+                        <td class='power-left'>
+                            ?
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="canvas-wrap">
+            <canvas id="spaceship" width="500" height="500"></canvas>
+            <canvas id="background" width="500" height="500"></canvas>
+        </div>
+        <div class="operate">
+            <div class="btn-wrap">
+                <a class="create-spaceship btn" id="create-spaceship">一键上天</a>
+            </div>
+            <div class="select-model">
+                <div class="select-speed">
+                    <span>动力系统：</span>
+                    <input type="radio" name="speed" value="slow">博尔特号(低能耗)
+                    <input type="radio" name="speed" value="fast">香港记者号(高能耗)
+                </div>
+                <div class="select-powerSource">
+                    <span>能源系统：</span>
+                    <input type="radio" name="charge" value="slow">五毛批发型(辣鸡充电)
+                    <input type="radio" name="charge" value="fast">大力出奇迹型(快速闪冲)
+                </div>
+
+                <div class="select-orbit">
+                    <span>发射轨道：</span>
+                    <input type="radio" name="orbit" value="inside">内侧轨道
+                    <input type="radio" name="orbit" value="outside">外侧轨道
+                </div>
+            </div>
+            <div class="control">
+                <div class="control-circle">
+                    <span>内侧轨道：</span>
+                    <a class="fly btn">天降正义! (起飞)</a>
+                    <a class="stop btn">冻住，不洗澡! (停止)</a>
+                    <a class="destroy btn">带带带! (销毁)</a>
+                </div>
+                <div class="control-circle">
+                    <span>外侧轨道：</span>
+                    <a class="fly btn">天降正义! (起飞)</a>
+                    <a class="stop btn">冻住，不洗澡! (停止)</a>
+                    <a class="destroy btn">带带带! (销毁)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="jQuery/jquery-3.1.0.slim.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

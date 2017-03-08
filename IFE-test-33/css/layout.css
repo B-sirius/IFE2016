@@ -1,0 +1,119 @@
+body
+{
+    background: #000;
+}
+.content
+{
+    width: 1300px;
+    margin: 50px auto;
+}
+.robot-wrap
+{
+    position: relative;
+}
+.robot
+{
+    position: absolute;
+
+    transition: transform .2s, left .5s, top .5s;
+}
+
+.draw-area
+{
+    width: 720px;
+    height: 720px;
+}
+.x-axis,
+.y-axis
+{
+    font-family: 'microsoft yahei';
+
+    position: absolute;
+
+    display: flex;
+
+    color: #36cf3c;
+
+    justify-content: space-around;
+    align-items: center;
+}
+.x-axis > span
+{
+    display: inline-block;
+
+    width: 36px;
+
+    text-align: center;
+}
+.x-axis
+{
+    flex-direction: row;
+
+    width: 720px;
+    height: 36px;
+    margin-top: -36px;
+}
+.y-axis
+{
+    flex-direction: column;
+
+    width: 36px;
+    height: 720px;
+    margin-left: -36px;
+}
+
+.console-wrap
+{
+    position: relative;
+}
+.editor
+{
+    position: absolute;
+    right: 0;
+
+    width: 500px;
+    height: 720px;
+}
+.function-bar
+{
+    width: 500px;
+    height: 40px;
+
+    background: #161616;
+}
+.btn-box
+{
+    display: inline-block;
+
+    width: 28px;
+    height: 28px;
+    padding: 4px 6px;
+}
+.btn-box:hover
+{
+    cursor: pointer;
+
+    opacity: .6;
+}
+.btn-box > img
+{
+    width: 28px;
+    height: 28px;
+}
+.editor-content
+{
+    font-family: 'Courier New';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    width: 500px;
+    height: 676px;
+
+    resize: none;
+
+    color: #36cf3c;
+    border: none;
+    outline: none;
+    background: #222325;
+}

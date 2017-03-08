@@ -1,0 +1,111 @@
+html, body {
+    height: 100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "microsoft yahei";
+}
+.console {
+    position: fixed;
+    height: 100%;
+    width: 280px;
+    background: rgb(15, 64, 159);
+    padding: 0 10px;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+.out-put {
+    font-size: 20px;
+    color: rgb(21, 223, 156);
+    border-bottom: 1px solid rgba(219, 219, 219, 0.2);
+}
+.content {
+    position: relative;
+    height: 100%;
+    margin-left: 300px;
+    background: rgb(4, 36, 96);
+    overflow: hidden;
+    /*使该区域 BFC 化*/
+}
+.canvas-wrap {
+    width: 500px;
+    height: 500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#spaceShip {
+    position: absolute;
+}
+.operate {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    width: 850px;
+    height: 240px;
+    margin: auto;
+}
+.btn-wrap {
+    position: relative;
+}
+.btn {
+    display: inline-block;
+    font-family: "microsoft yahei";
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.create-spaceShip {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 120px;
+    line-height: 100px;
+    color: #fff;
+    background: rgb(223, 10, 10);
+}
+.create-spaceShip:hover {
+    background: rgb(180, 7, 7);
+}
+.select-model {
+    height: 140px;
+    border-bottom: 2px dashed rgb(29, 207, 143);
+    padding: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.select-model input[type="radio"] {
+    height: 16px;
+    width: 16px;
+    vertical-align: -2px;
+    margin: 0 5px;
+}
+.control {
+    height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.fly, .stop, .destroy {
+    background: rgb(12, 91, 195);
+    color: #fff;
+    padding: 4px 15px;
+    margin: 0 25px;
+}
+.fly:hover, .stop:hover, .destroy:hover {
+    background: rgb(6, 73, 162);
+}
