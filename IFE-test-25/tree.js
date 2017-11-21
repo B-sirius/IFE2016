@@ -89,7 +89,7 @@ TreeNode.prototype = {
         //创建新文件夹
         var newFile = document.createElement('div');
         newFile.className = "node-body";
-        newFile.innerHTML = "<label class='node-header'> <img class='arrow arrow-right' src='imgs/arrow.svg' /> <img class='file' src='imgs/file.svg' /> <span>" + name + "</span> <span>&nbsp;</span> <span>&nbsp;</span> <div class='to-mark'></div></label>";
+        newFile.innerHTML = "<label class='node-header'> <img class='arrow arrow-right' src='imgs/arrow.svg' /> <img class='folder' src='imgs/folder.svg' /> <span>" + name + "</span> <span>&nbsp;</span> <span>&nbsp;</span> <div class='to-mark'></div></label>";
         this.selfElement.appendChild(newFile);
         // 创建对应的TreeNode对象并添加到子节点队列
         this.childs.push(new TreeNode({
@@ -116,7 +116,7 @@ TreeNode.prototype = {
         //创建新文件
         var newDocument = document.createElement('div');
         newDocument.className = "node-body";
-        newDocument.innerHTML = "<label class='node'> <img class='document' src='imgs/document.svg' /> <span>" + name + "</span> <span>&nbsp;</span> <span>&nbsp;</span> <div class='to-mark'></div> </label>";
+        newDocument.innerHTML = "<label class='node'> <img class='file' src='imgs/file.svg' /> <span>" + name + "</span> <span>&nbsp;</span> <span>&nbsp;</span> <div class='to-mark'></div> </label>";
         this.selfElement.appendChild(newDocument);
         // 创建对应的TreeNode对象并将其添加到子节点队列
         this.childs.push(new TreeNode({
@@ -140,8 +140,8 @@ var root = new TreeNode({
     selfElement: document.getElementsByClassName("node-body")[0],
 });
 // 查创建按钮对象
-var addFileBtn = document.getElementsByClassName('add-file-btn')[0];
-var addDocumentBtn = document.getElementsByClassName('add-document-btn')[0];
+var addFileBtn = document.getElementsByClassName('add-folder-btn')[0];
+var addDocumentBtn = document.getElementsByClassName('add-file-btn')[0];
 var searchBtn = document.getElementsByClassName('search-btn')[0];
 var deleteBtn = document.getElementsByClassName('delete-btn')[0];
 

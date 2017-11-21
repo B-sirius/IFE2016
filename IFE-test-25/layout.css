@@ -51,7 +51,7 @@ header {
     background: #f2f2f2;
     border-left: 4px solid #747474;
 }
-.add-document-icon, .add-file-icon, .search-icon, .delete-icon {
+.add-file-icon, .add-folder-icon, .search-icon, .delete-icon {
     width: 16px;
     margin: 0 7px -3px 15px;
 }
@@ -103,10 +103,10 @@ header {
 .found {
     color: #d40000;
 }
-.arrow, .document, .file {
+.arrow, .file, .folder {
     width: 16px;
 }
-.document, .file {
+.file, .folder {
     margin: 0 0 -3px -3px;
 }
 .arrow {
