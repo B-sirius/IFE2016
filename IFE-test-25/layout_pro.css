@@ -1,0 +1,154 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: "微软雅黑";
+    margin: 0;
+    height: 100%;
+    background: #dddddd;
+}
+header {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #393f4f;
+    padding-left: 10px;
+    animation: header_appear .5s;
+}
+@keyframes header_appear {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 40px;
+    }
+}
+.function-wrap {
+    position: absolute;
+    width: 180px;
+    min-height: 100%;
+}
+.side-bar {
+    padding: 0;
+    position: absolute;
+    width: 180px;
+}
+.bar-button {
+    position: relative;
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    border: none;
+    border-left: 4px solid transparent;
+    transition: .2s;
+    cursor: pointer;
+    list-style: none;
+}
+.bar-button:hover {
+    background: #f2f2f2;
+    border-left: 4px solid #747474;
+}
+.add-file-icon, .add-folder-icon, .search-icon, .delete-icon {
+    width: 16px;
+    margin: 0 7px -3px 15px;
+}
+.tree-wrap {
+    position: relative;
+    margin-left: 180px;
+    padding: 10px 0 0 20px;
+    background: #ededed;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.tree {
+    margin-left: -36px;
+}
+.node-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 36px;
+}
+.root {
+    margin-left: 0;
+}
+.hidden {
+    display: none;
+}
+.node-header, .node {
+    margin: 4px 0;
+}
+.mark {
+    position: relative;
+    bottom: 1px;
+    margin-left: 10px;    
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.node-header:hover > .mark,
+.node:hover .mark {
+    background: #b3b3b3;
+}
+.marked, .node-header:hover > .marked,
+.node:hover > .marked {
+    background-color: #c31700;
+}
+.found {
+    color: #d40000;
+}
+.file, .folder {
+    width: 16px;
+}
+.file, .folder {
+    margin: 0 6px -3px -3px;
+}
+.arrow {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(./imgs/arrow.svg);
+    background-size: cover;
+    margin-left: -3px;
+    margin-right: 8px;
+    text-decoration: none;
+}
+.empty-arrow {
+    opacity: .4;
+}
+.arrow-down {
+    transform: rotate(90deg);
+}
+.arrow-down:hover {
+    animation: down-shock .3s;
+    cursor: pointer;
+}
+.arrow-right:hover {
+    animation: right-shock .3s;
+    cursor: pointer;
+}
+@keyframes right-shock {
+    0% {}
+    33% {
+        transform: rotate(-10deg);
+    }
+    66% {
+        transform: rotate(10deg);
+    }
+    100% {}
+}
+@keyframes down-shock {
+    0% {}
+    33% {
+        transform: rotate(100deg);
+    }
+    66% {
+        transform: rotate(80deg);
+    }
+    100% {}
+}
