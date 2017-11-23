@@ -1,4 +1,5 @@
 'use strict';
+// 工具方法
 const _ = {
     newEL(elType, className = '', option = {}) {
         let el = document.createElement(elType);
@@ -25,6 +26,7 @@ const Node = {
         this.data = data;
         this.type = type;
         this.marked = false;
+        this.parent = null;
     },
     toggleMark() {
         this.marked = !this.marked;
@@ -48,6 +50,9 @@ Object.assign(FileNode, {
             markBtn,
             markEl
         }
+    },
+    setParent(node) {
+        this.parent = node;
     }
 });
 
@@ -84,8 +89,11 @@ Object.assign(FolderNode, {
     },
     add(f) {
         let t = Object.getPrototypeOf(f);
-        if (this.isNode(f)) // 单节点
+        if (this.isNode(f)) { // 单节点
             this.childList.push(f);
+
+            f.setParent(this);
+        }
         else if (t === Array.prototype) { // 纯节点数组
             for (let item of f) {
                 if (!isNode(item)) {
@@ -93,6 +101,8 @@ Object.assign(FolderNode, {
                     continue;
                 }
                 this.childList.push(item);
+
+                item.setParent(this);
             }
         } else {
             console.warn(`${t}不是有效的数据`);
@@ -112,11 +122,15 @@ Object.assign(FolderNode, {
             switchBtn
         }
     },
+    setParent(node) {
+        this.parent = node;
+    },
     toggleExpand() {
         this.expanded = !this.expanded;
     },
 });
 
+// 控制渲染的肮脏部分
 const render = {
     [folder]: function (node) {
         let nodeBody = _.newEL('div', 'node-body');
@@ -162,19 +176,7 @@ const render = {
             // 如果点击的是箭头
             if (e.target === nodeEls.switchBtn)
                 return;
-
-            let lastMarkedNode = nodeController.getLastMarkedNode();
-            if (lastMarkedNode !== null) {
-                nodeController.toggleMark(lastMarkedNode);
-                // 重复点击自身
-                if (lastMarkedNode === node) {
-                    nodeController.setLastMarkedNode(null);
-                    return;
-                }
-            }
-
             nodeController.toggleMark(node);
-            nodeController.setLastMarkedNode(node);
         });
 
         return nodeBody;
@@ -205,18 +207,7 @@ const render = {
         nodeContent.appendChild(markEl);
 
         nodeEls.markBtn.addEventListener('click', () => {
-            let lastMarkedNode = nodeController.getLastMarkedNode();
-            if (lastMarkedNode !== null) {
-                nodeController.toggleMark(lastMarkedNode);
-                // 重复点击自身
-                if (lastMarkedNode === node) {
-                    nodeController.setLastMarkedNode(null);
-                    return;
-                }
-            }
-
             nodeController.toggleMark(node);
-            nodeController.setLastMarkedNode(node);
         });
 
         return nodeBody;
@@ -228,11 +219,21 @@ let root = Object.create(FolderNode);
 root.build('科幻作品');
 let folder1 = Object.create(FolderNode);
 folder1.build('小说');
-let child1 = Object.create(FileNode);
-child1.build('银河帝国系列');
+let child1_1 = Object.create(FileNode);
+child1_1.build('银河帝国系列');
 
-folder1.add(child1);
+let folder2 = Object.create(FolderNode);
+folder2.build('影视');
+let child2_1 = Object.create(FileNode);
+child2_1.build('攻壳机动队');
+let child2_2 = Object.create(FileNode);
+child2_2.build('银翼杀手');
+
 root.add(folder1);
+root.add(folder2);
+folder1.add(child1_1);
+folder2.add(child2_1);
+folder2.add(child2_2);
 
 let rootBody = render[folder](root);
 const rootEl = document.querySelector('#js-root');
@@ -251,11 +252,17 @@ let nodeController = {
         return node;
     },
     toggleMark(node) {
+        // 切换上一个节点
+        if (this._lastMarkedNode !== null) {
+            this._lastMarkedNode.toggleMark();
+            this._lastMarkedNode.nodeEls.markEl.classList.toggle('marked');
+        }
+
         node.toggleMark();
         node.nodeEls.markEl.classList.toggle('marked');
 
         // 记录当前被选中的节点
-        this.lastMarkedNode = node;
+        this._lastMarkedNode = node;
     },
     toggleExpand(node) {
         node.toggleExpand();
@@ -270,12 +277,6 @@ let nodeController = {
 
         let newNodeBody = render[newNode.type](newNode);
         toNode.nodeEls.nodeBodyEl.appendChild(newNodeBody);
-    },
-    setLastMarkedNode(node) {
-        this._lastMarkedNode = node;
-    },
-    getLastMarkedNode() {
-        return this._lastMarkedNode;
     },
     _lastMarkedNode: null,
 }
@@ -317,7 +318,7 @@ let addToRoot = (() => {
 
         let newNode = createNode[type](data);
         nodeController.addTo(node, newNode);
-    
+
     }
 })();
 
@@ -352,6 +353,36 @@ searchBtn.onclick = () => {
 
     if (node.marked)
         return;
-    
+
     nodeController.toggleMark(node);
+}
+
+deleteBtn.onclick = () => {
+    let node = root.search((node) => {
+        return node.marked;
+    });
+
+    if (node === undefined) {
+        alert('无符合条件节点');
+        return;
+    }
+
+    if (!node.parent) {
+        alert('无法删除根节点');
+        return;
+    }
+
+    for (let i = node.parent.childList.length - 1; i >= 0; i--) {
+        // 从parent的childList中移除
+        if (node.parent.childList[i].marked) {
+            node.parent.childList.splice(i, 1);
+
+            node.parent = undefined;
+
+            // 从dom中移除
+            let nodeBody = node.nodeEls.nodeBodyEl;
+            nodeBody.parentNode.removeChild(nodeBody);
+            return;
+        }
+    }
 }
